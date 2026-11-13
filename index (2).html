@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zubair Ahmad | Data Scientist, ML Engineer, AI Engineer</title>
+<meta name="description" content="Portfolio of Zubair Ahmad: data science, machine learning and AI engineering projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef1f7;--surface:#fff;--ink:#12172b;--muted:#586079;--line:#d6dbe8;--accent:#4b3bff;--accent2:#ff5a4e;--node:75,59,255;--r:14px}
+:root[data-theme="dark"]{--bg:#0f1226;--surface:#171b35;--ink:#eceefb;--muted:#9aa1c4;--line:#2a2f55;--accent:#8c82ff;--accent2:#ff7a6e;--node:140,130,255}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1226;--surface:#171b35;--ink:#eceefb;--muted:#9aa1c4;--line:#2a2f55;--accent:#8c82ff;--accent2:#ff7a6e;--node:140,130,255}}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;line-height:1.08;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+.logo{font:800 20px "Bricolage Grotesque";text-decoration:none}
+.links{display:flex;gap:22px;align-items:center;font-size:15px}
+.links a{text-decoration:none;color:var(--muted)}.links a:hover{color:var(--ink)}
+.icon-btn{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:16px}
+@media(max-width:640px){.links a{display:none}}
+header.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+#net{position:absolute;inset:0;width:100%;height:100%}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:120px;pointer-events:none}
+.hero .wrap *{pointer-events:auto}
+.hero h1{font-size:clamp(46px,9vw,104px);font-weight:800;max-width:11ch}
+.role{margin-top:22px;font:500 clamp(20px,3vw,30px) "Bricolage Grotesque";color:var(--accent);min-height:1.4em}
+.role::after{content:"";display:inline-block;width:3px;height:1em;background:var(--accent2);margin-left:4px;vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{margin-top:18px;max-width:52ch;color:var(--muted)}
+.cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;border:1px solid var(--ink);text-decoration:none;font-weight:600;font-size:15px;cursor:pointer;background:none;color:var(--ink);font-family:inherit}
+.btn.main{background:var(--ink);color:var(--bg)}
+.btn:hover{transform:translateY(-2px)}
+section{padding:84px 0;border-bottom:1px solid var(--line)}
+section h2{font-size:clamp(30px,5vw,46px);margin-bottom:12px}
+.sub{color:var(--muted);max-width:56ch;margin-bottom:36px}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px}
+@media(max-width:800px){.about{grid-template-columns:1fr}}
+.stats{display:grid;gap:14px;align-content:start}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px}
+.stat b{font:800 30px "Bricolage Grotesque";color:var(--accent)}
+.stat span{display:block;color:var(--muted);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.skill h3{font-size:20px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px;background:var(--bg)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filters button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 16px;cursor:pointer;font:500 14px inherit;font-family:inherit}
+.filters button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card h3{font-size:22px}.card p{color:var(--muted);font-size:15.5px;flex:1}
+.card .tags{font-size:13px;color:var(--accent)}
+.card a{font-weight:600;font-size:15px}
+.hide{display:none}
+.timeline{border-left:2px solid var(--line);padding-left:26px;display:grid;gap:30px}
+.timeline div{position:relative}
+.timeline div::before{content:"";position:absolute;left:-34px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.timeline h3{font-size:20px}.timeline small{color:var(--muted)}
+footer{padding:60px 0 90px}
+footer h2{font-size:clamp(34px,6vw,64px)}
+.contact{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+#fab{position:fixed;right:22px;bottom:22px;z-index:30;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:14px 20px;font:600 15px "Instrument Sans";cursor:pointer;box-shadow:0 8px 28px rgba(75,59,255,.4)}
+#chat{position:fixed;right:22px;bottom:84px;z-index:30;width:min(380px,calc(100vw - 32px));height:min(520px,70vh);background:var(--surface);border:1px solid var(--line);border-radius:18px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+#chat.open{display:flex}
+#chat header{padding:14px 18px;border-bottom:1px solid var(--line);font:800 17px "Bricolage Grotesque"}
+#chat header small{display:block;font:400 13px "Instrument Sans";color:var(--muted)}
+#log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.msg{max-width:88%;padding:10px 14px;border-radius:14px;line-height:1.5}
+.msg.bot{background:var(--bg);align-self:flex-start;border-bottom-left-radius:4px}
+.msg.me{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.sugg{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
+.sugg button{border:1px solid var(--line);background:none;color:var(--ink);border-radius:999px;padding:5px 12px;font:13px "Instrument Sans";cursor:pointer}
+#chat form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+#chat input{flex:1;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:10px 16px;font:15px "Instrument Sans"}
+#chat form button{border:0;background:var(--ink);color:var(--bg);border-radius:999px;padding:0 18px;font-weight:600;cursor:pointer}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">Zubair Ahmad</a>
+  <div class="links">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+    <button class="icon-btn" id="theme" aria-label="Toggle dark mode">◐</button>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <canvas id="net" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1>Zubair Ahmad</h1>
+    <p class="role" id="role" aria-live="off"></p>
+    <p class="lede">I turn messy data into models that work. Right now I'm building end-to-end machine learning projects and learning how to ship them as real products.</p>
+    <div class="cta">
+      <a class="btn main" href="#projects">See my projects</a>
+      <button class="btn" id="askBtn">Ask my AI assistant</button>
+    </div>
+  </div>
+</header>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <h2>About me</h2>
+    <p>I'm a BS Computer Science student at the University of Okara, Pakistan. I'm working toward a career as a data scientist and AI engineer, and I learn by building: every concept I study ends up as a project on GitHub.</p>
+    <p style="margin-top:14px">I'm also preparing for higher studies abroad in AI and Data Science, so I care about clean experiments, honest evaluation and reproducible code.</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>3 roles</b><span>Data science, ML and AI engineering</span></div>
+    <div class="stat"><b>BS CS</b><span>University of Okara</span></div>
+    <div class="stat"><b>Open source</b><span>Everything lives on GitHub</span></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>What I work with</h2>
+  <p class="sub">Tools I use to take a project from raw data to a working model.</p>
+  <div class="skills">
+    <div class="skill"><h3>Data science</h3><div class="chips"><span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">SQL</span><span class="chip">Matplotlib</span><span class="chip">Seaborn</span></div></div>
+    <div class="skill"><h3>Machine learning</h3><div class="chips"><span class="chip">Scikit-learn</span><span class="chip">Feature engineering</span><span class="chip">Model evaluation</span><span class="chip">XGBoost</span></div></div>
+    <div class="skill"><h3>AI engineering</h3><div class="chips"><span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">LLM apps</span><span class="chip">Streamlit</span><span class="chip">FastAPI</span></div></div>
+    <div class="skill"><h3>Foundations</h3><div class="chips"><span class="chip">Algorithms</span><span class="chip">Databases</span><span class="chip">Linear algebra</span><span class="chip">Automata</span><span class="chip">Git and GitHub</span></div></div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">Filter by area. Replace the placeholder cards below with your real repositories.</p>
+  <div class="filters" id="filters">
+    <button aria-pressed="true" data-f="all">All</button>
+    <button aria-pressed="false" data-f="ml">Machine learning</button>
+    <button aria-pressed="false" data-f="nlp">NLP and LLMs</button>
+    <button aria-pressed="false" data-f="data">Data analysis</button>
+  </div>
+  <div class="grid" id="grid">
+    <!-- EDIT: change title, text, tags and link for each project -->
+    <article class="card" data-c="ml"><h3>House price predictor</h3><p>Regression pipeline with feature engineering, cross-validation and a comparison of several models.</p><div class="tags">Python · Scikit-learn · Pandas</div><a href="https://github.com/zubairahmad-ml/house-price-predictor">View on GitHub</a></article>
+    <article class="card" data-c="nlp"><h3>Sentiment analyzer</h3><p>Text classification on product reviews, from cleaning and TF-IDF to a fine-tuned transformer.</p><div class="tags">NLP · PyTorch · Hugging Face</div><a href="https://github.com/zubairahmad-ml/sentiment-analyzer">View on GitHub</a></article>
+    <article class="card" data-c="data"><h3>Exploratory data dashboard</h3><p>Interactive dashboard that explores a public dataset and surfaces the patterns that matter.</p><div class="tags">Streamlit · Plotly · SQL</div><a href="https://github.com/zubairahmad-ml/data-dashboard">View on GitHub</a></article>
+    <article class="card" data-c="ml"><h3>Image classifier</h3><p>Convolutional network trained with augmentation, with error analysis on the hardest classes.</p><div class="tags">CNN · TensorFlow · Computer vision</div><a href="https://github.com/zubairahmad-ml/image-classifier">View on GitHub</a></article>
+    <article class="card" data-c="nlp"><h3>Chat with your documents</h3><p>Retrieval-augmented question answering over PDF files using embeddings and a vector index.</p><div class="tags">LLM · RAG · FastAPI</div><a href="https://github.com/zubairahmad-ml/doc-chat">View on GitHub</a></article>
+  </div>
+</div></section>
+
+<section id="journey"><div class="wrap">
+  <h2>Journey</h2>
+  <p class="sub">Where I am and where I'm heading.</p>
+  <div class="timeline">
+    <div><h3>BS Computer Science, University of Okara</h3><small>In progress</small><p>Databases, algorithms, automata and linear algebra alongside self-paced machine learning study.</p></div>
+    <div><h3>Building my ML portfolio</h3><small>Now</small><p>Shipping projects to GitHub, from data cleaning to deployed apps.</p></div>
+    <div><h3>MPhil or MS abroad in AI and Data Science</h3><small>Next</small><p>Preparing applications and strengthening research and math foundations.</p></div>
+  </div>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+  <h2>Let's build something with data.</h2>
+  <p class="sub" style="margin-top:12px">Open to internships, collaborations and research opportunities.</p>
+  <div class="contact">
+    <a class="btn main" href="mailto:zubairahmad13042@gmail.com">Email me</a>
+    <a class="btn" href="https://github.com/zubairahmad-ml">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/zubair-ahmad-61b255368">LinkedIn</a>
+  </div>
+</div></footer>
+
+<button id="fab" aria-expanded="false" aria-controls="chat">Ask Zubair's AI</button>
+<aside id="chat" aria-label="AI assistant">
+  <header>Zubair's AI assistant<small>Answers questions about his work</small></header>
+  <div id="log" role="log" aria-live="polite"></div>
+  <div class="sugg" id="sugg"></div>
+  <form id="form"><input id="q" placeholder="Ask about skills, projects…" aria-label="Your question" autocomplete="off"><button>Send</button></form>
+</aside>
+
+<script>
+const root=document.documentElement;
+try{const t=localStorage.getItem("theme");if(t)root.dataset.theme=t}catch(e){}
+document.getElementById("theme").onclick=()=>{
+  const dark=getComputedStyle(root).getPropertyValue("--bg").trim()==="#0f1226";
+  root.dataset.theme=dark?"light":"dark";
+  try{localStorage.setItem("theme",root.dataset.theme)}catch(e){}
+  nodeColor();
+};
+
+const roles=["Data Scientist","ML Engineer","AI Engineer"],roleEl=document.getElementById("role");
+let ri=0,ci=0,del=false;
+(function type(){
+  const w=roles[ri];
+  roleEl.textContent=w.slice(0,ci);
+  if(!del&&ci===w.length){del=true;return setTimeout(type,1600)}
+  if(del&&ci===0){del=false;ri=(ri+1)%roles.length}
+  ci+=del?-1:1;setTimeout(type,del?40:80);
+})();
+
+const cv=document.getElementById("net"),cx=cv.getContext("2d");
+let W,H,nodes=[],pulses=[],mouse={x:-999,y:-999},rgb="75,59,255";
+const calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function nodeColor(){rgb=getComputedStyle(root).getPropertyValue("--node").trim()}
+function resize(){
+  const r=cv.parentElement.getBoundingClientRect();
+  W=cv.width=r.width;H=cv.height=r.height;
+  const n=Math.min(70,Math.floor(W*H/16000));
+  nodes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}));
+}
+addEventListener("resize",resize);
+cv.parentElement.addEventListener("mousemove",e=>{const r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top});
+cv.parentElement.addEventListener("mouseleave",()=>{mouse.x=mouse.y=-999});
+function frame(){
+  cx.clearRect(0,0,W,H);
+  for(const a of nodes){
+    if(!calm){a.x+=a.vx;a.y+=a.vy}
+    if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+  }
+  for(let i=0;i<nodes.length;i++){
+    const a=nodes[i];
+    for(let j=i+1;j<nodes.length;j++){
+      const b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<140){cx.strokeStyle=`rgba(${rgb},${(1-d/140)*.35})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke();
+        if(!calm&&Math.random()<.0008)pulses.push({a,b,t:0})}
+    }
+    const m=Math.hypot(a.x-mouse.x,a.y-mouse.y),hot=m<170;
+    if(hot){cx.strokeStyle=`rgba(255,90,78,${(1-m/170)*.7})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(mouse.x,mouse.y);cx.stroke()}
+    cx.fillStyle=hot?"rgb(255,90,78)":`rgba(${rgb},.8)`;
+    cx.beginPath();cx.arc(a.x,a.y,hot?3.5:2.4,0,6.3);cx.fill();
+  }
+  pulses=pulses.filter(p=>(p.t+=.02)<1);
+  for(const p of pulses){cx.fillStyle="rgb(255,90,78)";cx.beginPath();cx.arc(p.a.x+(p.b.x-p.a.x)*p.t,p.a.y+(p.b.y-p.a.y)*p.t,3,0,6.3);cx.fill()}
+  requestAnimationFrame(frame);
+}
+nodeColor();resize();frame();
+
+const fs=document.querySelectorAll("#filters button"),cards=document.querySelectorAll("#grid .card");
+fs.forEach(b=>b.onclick=()=>{
+  fs.forEach(x=>x.setAttribute("aria-pressed",x===b));
+  cards.forEach(c=>c.classList.toggle("hide",b.dataset.f!=="all"&&c.dataset.c!==b.dataset.f));
+});
+
+const KB=[
+ {k:["skill","tech","stack","tools","python","know"],a:"Zubair works with Python, Pandas, NumPy, SQL, Scikit-learn, PyTorch and TensorFlow, and builds apps with Streamlit and FastAPI."},
+ {k:["project","built","work","portfolio","github","repo"],a:"Check the Projects section: regression, NLP, computer vision and a document Q&A app. Every project is open source on his GitHub."},
+ {k:["education","study","university","degree","okara","student","college"],a:"He is a BS Computer Science student at the University of Okara, Pakistan, focused on data science and machine learning."},
+ {k:["goal","future","plan","abroad","mphil","ms ","masters","higher"],a:"His goal is to become a job-ready data scientist or AI engineer, and he is preparing for MPhil or MS studies abroad in AI and Data Science."},
+ {k:["hire","job","intern","opportunit","available","collab"],a:"Zubair is open to internships, collaborations and research opportunities. Use the Email button at the bottom of the page."},
+ {k:["contact","email","reach","linkedin","mail"],a:"You can reach him by email, GitHub or LinkedIn. The links are in the contact section at the bottom of the page."},
+ {k:["who","about","zubair","name","yourself"],a:"Zubair Ahmad is a data scientist, ML engineer and AI engineer in the making. He learns by building and shares everything on GitHub."},
+ {k:["hello","hi","hey","salam","assalam"],a:"Assalam o Alaikum! Ask me about Zubair's skills, projects, education or goals."}
+];
+const log=document.getElementById("log"),chat=document.getElementById("chat"),fab=document.getElementById("fab"),q=document.getElementById("q");
+function say(t,who){const d=document.createElement("div");d.className="msg "+who;d.textContent=t;log.append(d);log.scrollTop=log.scrollHeight;return d}
+function answer(text){
+  const s=text.toLowerCase();let best=null,score=0;
+  for(const e of KB){const n=e.k.filter(w=>s.includes(w)).length;if(n>score){score=n;best=e}}
+  return best?best.a:"I can answer questions about Zubair's skills, projects, education, goals and contact details. Try one of the suggestions below.";
+}
+function ask(t){
+  if(!t.trim())return;say(t,"me");
+  const b=say("Thinking…","bot");
+  setTimeout(()=>{b.textContent=answer(t);log.scrollTop=log.scrollHeight},500);
+}
+["Skills","Projects","Education","Goals","Hire him"].forEach(s=>{
+  const b=document.createElement("button");b.textContent=s;b.type="button";b.onclick=()=>ask(s);document.getElementById("sugg").append(b);
+});
+document.getElementById("form").onsubmit=e=>{e.preventDefault();ask(q.value);q.value=""};
+function toggle(){const o=chat.classList.toggle("open");fab.setAttribute("aria-expanded",o);if(o){q.focus();if(!log.children.length)say("Assalam o Alaikum! I'm Zubair's AI assistant. Ask me about his skills, projects or goals.","bot")}}
+fab.onclick=toggle;document.getElementById("askBtn").onclick=toggle;
+</script>
+</body>
+</html>
